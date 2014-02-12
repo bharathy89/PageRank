@@ -1,0 +1,13 @@
+This project needs wiki dump files 
+
+This project can be run using local hadoop installation or on amazon aws.
+
+How to run:
+
+1. Amazon aws emr CLI command
+
+elastic-mapreduce --create --name "PageRank" --ami-version 2.4.2 --instance-type m1.small --num-instances <numberofnodes> --log-uri s3://<bucket name>/logs --jar s3://<bucket name>/job/PageRank.jar --arg s3://<bucket name>/<path to input folder> s3://<bucket name>/<path to output folder>
+
+2. local installation
+
+hadoop jar ~/Path/to/PageRank.jar /Path/to/input/folder/ /Path/to/output/folder/
